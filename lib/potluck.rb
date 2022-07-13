@@ -18,6 +18,16 @@ class Potluck
     end
   end
 
-  
+  def menu
+    menu_hash = Hash.new{|hash, key| hash[key] = []}
+    @dishes.each do |dish|
+      menu_hash[dish.category].push(dish.name)
 
+    end
+    menu_hash
+  end
+
+  def ratio(category)
+    get_all_from_category(category).count.to_f / @dishes.count * 100
+  end
 end
