@@ -18,4 +18,6 @@ class Potluck
     end
   end
 
+  
+
 end
