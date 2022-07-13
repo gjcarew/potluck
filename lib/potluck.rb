@@ -18,13 +18,18 @@ class Potluck
     end
   end
 
+  def sort_hash_values(hash)
+    hash.map{|k, v| [k, v.sort]}.to_h
+  end
+
   def menu
     menu_hash = Hash.new{|hash, key| hash[key] = []}
     @dishes.each do |dish|
       menu_hash[dish.category].push(dish.name)
-
     end
-    menu_hash
+
+    sort_hash_values(menu_hash)
+
   end
 
   def ratio(category)

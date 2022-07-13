@@ -58,11 +58,9 @@ RSpec.describe Potluck do
     @potluck.add_dish(candy_salad)
     @potluck.add_dish(bean_dip)
 
-    expect(@potluck.menu).to be_kind_of(Hash)
-
-      # {:appetizer=>["Bean Dip", "Couscous Salad", "Summer Pizza"],
-      #                           :entre=>["Cocktail Meatballs", "Roast Pork"],
-      #                           :dessert=>["Candy Salad"]})
+    expect(@potluck.menu).to eq({:appetizer=>["Bean Dip", "Couscous Salad", "Summer Pizza"],
+                                :entre=>["Cocktail Meatballs", "Roast Pork"],
+                                :dessert=>["Candy Salad"]})
   end
 
   it 'can tell the ratio of a category to the other categories' do
